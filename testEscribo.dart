@@ -14,7 +14,7 @@ functionToCalc(int number) {
 
 void main() {
   stdout.writeln('Digite um número inteiro e positivo: ');
-  var inputNumber = stdin.readLineSync();
+  String? inputNumber = stdin.readLineSync();
 
   int value = int.parse(inputNumber!);
   if (value > 0) {
