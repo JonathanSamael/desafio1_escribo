@@ -1,22 +1,26 @@
 import 'dart:io';
 
 functionToCalc(int number) {
-  int totalSomatorio = 0;
+  int totalSum = 0;
 
-  for(int value = 1; value < number; value++) {
+  for (int value = 1; value < number; value++) {
     if (value % 3 == 0 || value % 5 == 0) {
-    totalSomatorio += value;
+      totalSum += value;
     }
   }
-  return totalSomatorio;
+
+  return totalSum;
 }
 
 void main() {
   stdout.writeln('Digite um número inteiro e positivo: ');
-  var value = stdin.readLineSync();
+  var inputNumber = stdin.readLineSync();
 
-  int numero = int.parse(value!);
-  int result = functionToCalc(numero);
-
-  print('Para o valor de $value, o resultado da soma é $result.');
+  int value = int.parse(inputNumber!);
+  if (value > 0) {
+    int result = functionToCalc(value);
+    print('Para o valor de $value, o resultado da soma é $result.');
+  } else {
+    print('O valor digitado é inválido, digite um número inteiro positivo');
+  }
 }
